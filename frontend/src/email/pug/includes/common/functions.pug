@@ -1,0 +1,7 @@
+-
+    function setOptions(optionsSource, optionsTarget) {
+        for(var prop in optionsSource) {
+            optionsTarget[prop] = optionsTarget[prop] ? optionsTarget[prop] : optionsSource[prop];
+        }
+        return optionsTarget;
+    };

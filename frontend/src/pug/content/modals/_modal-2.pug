@@ -1,0 +1,19 @@
+extends ../../config/layout-modal
+block options
+    -
+        options = {
+            'modalId'       : siteOptions.modalAwesome.id.second,
+            'win'           : {
+                'anim'      : {
+                    'in'    : 'leftToRight',
+                    'out'   : 'leftToRight',
+                },
+            },
+            'work'          : '',
+        }
+block content
+    +button({
+        'className' : 'awModalClose',
+        'title' : 'button close',
+    })
+    button(class='awModalOpen' data-awesome-modal=siteOptions.modalAwesome.id.third) Open 3

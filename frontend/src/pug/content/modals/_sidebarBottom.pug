@@ -1,0 +1,23 @@
+extends ../../config/layout-modal
+block options
+    -
+        options = {
+            'modalId'       : siteOptions.modalAwesome.id.sidebarBottom,
+            'mode'          : 'sidebarBottom',
+            'win'           : {
+                'anim'      : {
+                    'in'    : 'sidebarToTop',
+                    'out'   : 'sidebarToBottom',
+                },
+            },
+            'work'          : 'css-vertical-align-bottom css-overflow-hidden',
+        }
+block content
+    - var val = 0;
+    while val < 2
+        p= val++
+    +button({
+        'className' : 'awModalClose',
+        'title' : 'button close',
+    })
+

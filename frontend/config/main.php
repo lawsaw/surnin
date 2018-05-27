@@ -42,6 +42,19 @@ return [
             'showScriptName' => false,
             'rules' => require __DIR__."/urlRules.php",
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js'=>[]
+                ],
+                'yii\web\JqueryAsset' => [
+                    'js'=>[]
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

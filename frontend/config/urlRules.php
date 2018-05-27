@@ -20,24 +20,27 @@ return [
 
 
 
-    '/' => 'site/index',
-    'modal' => 'lawsaw/modal',
+//    '/' => 'site/index',
+//    'modal' => 'lawsaw/modal',
 
 //    '' => 'site/index',
 //    '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 
 
-    [
-        'pattern' => 'about',
-        'route' => 'site/about',
-        'suffix' => '/',
-    ],
-    [
-        'pattern' => 'modal',
-        'route' => 'modal/index',
-        'suffix' => '.html',
-    ],
+//    [
+//        'pattern' => 'about',
+//        'route' => 'site/about',
+//        'suffix' => '/',
+//    ],
+//    [
+//        'pattern' => 'modal',
+//        'route' => 'modal/index',
+//        'suffix' => '.html',
+//    ],
 
+
+    '' => 'site/index',
+    '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 
 
 

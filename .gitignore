@@ -34,12 +34,11 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 
+#PHP Storm
+/.idea
 
+#API
+/frontend/src/api
 
-
-
-# custom
-
-
-
-
+#NPM
+/node_modules

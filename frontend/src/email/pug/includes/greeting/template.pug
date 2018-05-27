@@ -1,0 +1,146 @@
+extends ../common/template
+
+
+block options
+
+block defaults
+    include defaults
+
+block content
+
+    include data
+
+    +table({
+        'bgcolor': '#fff',
+    })
+        +td
+            +separator({
+                'height': '30px',
+            })
+            +table({
+                'width': contentWidth,
+            })
+                +td
+                    +text({
+                        'font-size': fontSizeL,
+                        'color': colorGrey,
+                        'text-align': 'center',
+                    }) Здравствуйте!
+
+                    +separator({
+                        'height': '25px',
+                    })
+
+                    +text({
+                        'font-size': fontSizeM,
+                        'color': colorGrey,
+                    }).
+                        Здесь какой-то текст приветствия...
+
+
+            +separator({
+                'height': '30px',
+            })
+
+
+
+    +table({
+        'height': '249',
+    })
+        +td
+            img(src=imagePath + "dicomaas-banner-greeting.png" alt="dicomaas.com" width= winWidth height="249" style= {'display': 'block'})
+
+
+    +table({
+        'bgcolor': '#fff',
+    })
+        +td
+            +separator({
+                'height': '30px',
+            })
+            +table({
+                'width': contentWidth,
+            })
+                +td
+                    +text({
+                        'font-size': fontSizeM,
+                        'color': colorGrey,
+                        'text-align': 'center',
+                    }) Список из горизонтальных ячеек
+
+                    +separator({
+                        'height': '25px',
+                    })
+
+                    +gridContent({
+                        'align': 'center',
+                        'data': [
+                            {
+                                'title': 'Заголовок 1',
+                                'description': 'Тут описание какого-то 1 пункта...',
+                                'image': {
+                                    'name': 'artificial-itelligence.png',
+                                    'width': '67',
+                                    'height': '55',
+                                    'cellHeight': '57',
+                                },
+                            },{
+                                'title': 'Заголовок 2',
+                                'description': 'Тут описание какого-то 2 пункта...',
+                                'image': {
+                                    'name': 'rendering.png',
+                                    'width': '53',
+                                    'height': '53',
+                                    'cellHeight': '57',
+                                },
+                            },{
+                                'title': 'Заголовок 3',
+                                'description': 'Тут описание какого-то 3 пункта...',
+                                'image': {
+                                    'name': 'calculating.png',
+                                    'width': '57',
+                                    'height': '57',
+                                    'cellHeight': '57',
+                                },
+                            },{
+                                'title': 'Заголовок 4',
+                                'description': 'Тут описание какого-то 4 пункта...',
+                                'image': {
+                                    'name': 'modeling.png',
+                                    'width': '59',
+                                    'height': '57',
+                                    'cellHeight': '57',
+                                },
+                            },
+                        ]
+                    })
+
+                    +separator({
+                        'height': '25px',
+                    })
+
+                    +text({
+                        'font-size': fontSizeM,
+                        'color': colorGrey,
+                        'text-align': 'center',
+                    }) Еще какой-то текст и
+                        |
+                        |
+                        +a({
+                            'href': siteUrl,
+                            'italic': true,
+                            'styles': {
+                                'color': colorGrey,
+                                'font-size': fontSizeM,
+                                'font-family': fontFamily,
+                                'text-decoration': 'underline',
+                            }
+                        }) текстовая ссылочка
+                        | .
+
+                    +separator({
+                        'height': '25px',
+                    })
+
+
+ 
