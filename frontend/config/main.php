@@ -6,7 +6,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-//use yii\web\UrlNormalizer;
+use yii\web\UrlNormalizer;
 
 return [
     'id' => 'app-frontend',
@@ -17,7 +17,7 @@ return [
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
-            //'class' => 'frontend\components\LangRequest'
+            'class' => 'lawsaw\components\LangRequest'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -44,12 +44,12 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             //'enableStrictParsing' => false,
-            //'class' => \frontend\components\LangUrlManager::className(),
+            'class' => \lawsaw\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
-//            'normalizer' => [
-//                'class' => 'yii\web\UrlNormalizer',
-//                'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
-//            ],
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
+            ],
         ],
         'assetManager' => [
             'bundles' => [
@@ -64,7 +64,7 @@ return [
                 ],
             ],
         ],
-        //'language' => 'en',
+        'language' => 'en',
         'i18n' => [
             'translations' => [
 

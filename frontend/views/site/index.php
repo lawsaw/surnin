@@ -2,7 +2,7 @@
 
 use lawsaw\widgets\Seo;
 use lawsaw\widgets\Button;
-use frontend\widgets\Language;
+use lawsaw\widgets\Language;
 
 ?>
 
