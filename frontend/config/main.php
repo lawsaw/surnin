@@ -43,7 +43,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => false,
+            //'enableStrictParsing' => false,
             //'class' => \frontend\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
 //            'normalizer' => [
@@ -64,7 +64,7 @@ return [
                 ],
             ],
         ],
-        'language' => 'en',
+        //'language' => 'en',
         'i18n' => [
             'translations' => [
 
