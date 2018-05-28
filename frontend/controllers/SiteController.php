@@ -219,4 +219,35 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
+
+
+
+
+
+
+
+    public function actionIpinfo()
+    {
+        $info = file_get_contents('http://geoip.nekudo.com/api/'.$_SERVER['REMOTE_ADDR']);
+
+        $info_row = json_decode($info , true);
+
+        if(array_key_exists('type' , $info_row))
+        {
+            $country = 'US';
+        }
+        else
+        {
+            $country = $info_row['country']['code'];
+        }
+
+        echo json_encode([
+            'country' => $country
+        ]);
+    }
+
+
+
 }

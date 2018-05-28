@@ -2,6 +2,7 @@
 
 use lawsaw\widgets\Seo;
 use lawsaw\widgets\Button;
+use frontend\widgets\Language;
 
 ?>
 
@@ -50,3 +51,9 @@ Index page
         'model' => 'TestForm',
     ]
 ]); ?>
+
+<?= Language::widget([
+    'frontTheme' => 'introductioned',
+    'backTheme' => 'introductioned'
+]);
+?>

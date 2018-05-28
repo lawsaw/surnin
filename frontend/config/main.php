@@ -6,6 +6,8 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
+use yii\web\UrlNormalizer;
+
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
@@ -15,6 +17,7 @@ return [
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
+            'class' => 'frontend\components\LangRequest'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -40,7 +43,13 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'class' => \frontend\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
+            ],
         ],
         'assetManager' => [
             'bundles' => [
@@ -55,6 +64,7 @@ return [
                 ],
             ],
         ],
+        'language' => 'en',
         'i18n' => [
             'translations' => [
 
