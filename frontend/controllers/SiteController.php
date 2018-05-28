@@ -72,8 +72,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->view->params['cssFile'] = '/css/index.min.css?'.\Yii::$app->params['styleVersion'];
-        $this->view->params['jsFile'] = '/js/index.min.js?'.\Yii::$app->params['styleVersion'];
+//        \Yii::$app->view->registerLinkTag([
+//            'rel' => 'stylesheet',
+//            'href' => 'stylefff.css',
+//        ]);
+        \Yii::$app->layout = 'layout-main';
+        $this->view->params['cssFile'] = '/css/index.min.css?v='.\Yii::$app->params['styleVersion'];
+        $this->view->params['jsFile'] = '/js/index.min.js?v='.\Yii::$app->params['styleVersion'];
         return $this->render('index');
     }
 

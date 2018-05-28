@@ -42,6 +42,8 @@ return [
     '' => 'site/index',
     '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 
+    'modal' => 'lawsaw/modal',
+
 
 
 ];
