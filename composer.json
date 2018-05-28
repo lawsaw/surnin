@@ -18,7 +18,8 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "lawsaw/yii2-awesome": "^1.0.11"
+        "true/punycode": "~2.0",
+        "lawsaw/yii2-awesome": ">=1.0.11"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

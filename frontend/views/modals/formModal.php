@@ -23,7 +23,7 @@ use lawsaw\widgets\Button;
         'id' => false,
         'action' => false,
         'options' => [
-            'data-target' => Yii::$app->urlManager->createUrl(['/forms/contact', 'language' => \Yii::$app->language]),
+            'data-target' => Yii::$app->urlManager->createUrl(['/forms/test', 'language' => \Yii::$app->language]),
             'class' => 'formAwesome grid grid--column',
         ],
         'enableClientScript' => false
@@ -154,7 +154,7 @@ use lawsaw\widgets\Button;
 //            ]); ?>
 
 
-    <div class="formAwesome-group grid-row grid-row--form grid-row--column field-contactform-recaptcha required">
+    <div class="formAwesome-group grid-row grid-row--form grid-row--column field-testform-recaptcha required">
         <div class="grid-cell grid-cell--form-label formAwesome-label-container">
             <label class="formAwesome-label">reCaptcha</label>
         </div>

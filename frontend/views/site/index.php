@@ -32,3 +32,21 @@ Index page
         'workClass' => 'css-vertical-align-top'
     ]
 ]); ?>
+
+<?= Button::widget([
+    'classContent' => 'awModalOpen',
+    'theme' => 'lightblue',
+    'size' => 'sizeL',
+    'href' => '#',
+    'label' => Yii::t('f', 'form modal'),
+    'modal' => [
+        'id' => 'formModal',
+        'mode' => '',
+        'anim' => [
+            'in' => 'zoomIn',
+            'out' => 'zoomIn',
+        ],
+        'workClass' => '',
+        'model' => 'TestForm',
+    ]
+]); ?>
