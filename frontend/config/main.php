@@ -17,7 +17,7 @@ return [
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
-            'class' => 'frontend\components\LangRequest'
+            //'class' => 'frontend\components\LangRequest'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -44,7 +44,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => false,
-            'class' => \frontend\components\LangUrlManager::className(),
+            //'class' => \frontend\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
 //            'normalizer' => [
 //                'class' => 'yii\web\UrlNormalizer',
