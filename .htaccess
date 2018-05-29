@@ -32,12 +32,5 @@
     RewriteCond %{REQUEST_URI} !^/../ [NC]
     RewriteRule ^(.*)$ /en$1 [R=301]
 
-    # If no page specified, default to home.
-    RewriteCond %{REQUEST_URI} !^/../.+ [NC]
-    RewriteRule ^/(..) /$1/home.html [R=301]
-
-    # If no ln query, tack it on
-    RewriteCond %{QUERY_STRING} !ln= [NC]
-    RewriteRule ^/(..)/(.*) /$1/$2?ln=$1 [R=301]
 
 </IfModule>
