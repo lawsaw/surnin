@@ -1,5 +1,0 @@
-<IfModule mod_rewrite.c>
-    Options +SymLinksIfOwnerMatch
-    RewriteEngine On
-</IfModule>
-
