@@ -45,7 +45,6 @@ return [
             'showScriptName' => false,
             'baseUrl' => '/',
             'class' => \lawsaw\components\LangUrlManager::className(),
-            'languages' => ['en','ru','fr'],
             'rules' => require __DIR__."/urlRules.php",
             'normalizer' => [
                 'class' => 'yii\web\UrlNormalizer',
