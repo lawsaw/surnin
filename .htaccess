@@ -20,6 +20,9 @@
     RewriteRule ^(.*)$ frontend/web/$1 [L]
     RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|js)/
     RewriteCond %{REQUEST_URI} !index.php
+    RewriteCond %{REQUEST_URI} !^/ru
+    RewriteCond %{REQUEST_URI} !^/en
+    RewriteCond %{REQUEST_URI} !^/
     RewriteCond %{REQUEST_FILENAME} !-f [OR]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^.*$ frontend/web/index.php
