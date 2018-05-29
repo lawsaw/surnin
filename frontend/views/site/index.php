@@ -57,3 +57,11 @@ Index page
     'backTheme' => 'introductioned'
 ]);
 ?>
+
+<?php
+
+var_dump('was '.\Yii::$app->language);
+var_dump('trans '.\Yii::$app->language = 'ru-RU');
+var_dump('is '.\Yii::$app->language);
+
+?>
