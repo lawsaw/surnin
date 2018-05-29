@@ -24,7 +24,20 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^.*$ frontend/web/index.php
 
+    # If just the language is specified (ie example.com/en)
+    RewriteCond %{REQUEST_URI} ^/..$ [NC]
+    RewriteRule ^(.*)$ $1/
+
+    # If no language subfolder, default to 'en'
     RewriteCond %{REQUEST_URI} !^/../ [NC]
-    RewriteRule ^(.*)$ /en$1 [R=301,L]
+    RewriteRule ^(.*)$ /en$1 [R=301]
+
+    # If no page specified, default to home.
+    RewriteCond %{REQUEST_URI} !^/../.+ [NC]
+    RewriteRule ^/(..) /$1/home.html [R=301]
+
+    # If no ln query, tack it on
+    RewriteCond %{QUERY_STRING} !ln= [NC]
+    RewriteRule ^/(..)/(.*) /$1/$2?ln=$1 [R=301]
 
 </IfModule>
