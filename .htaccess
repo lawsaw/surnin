@@ -23,4 +23,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f [OR]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^.*$ frontend/web/index.php
+
+    RewriteCond %{REQUEST_URI} ^/
+    RewriteRule ^\/?(.*) /frontend/web/$1
+
+
 </IfModule>
