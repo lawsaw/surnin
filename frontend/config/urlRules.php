@@ -39,7 +39,7 @@ return [
 //    ],
 
 
-    '' => 'site/index',
+    '/' => 'site/index',
     '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 
 
