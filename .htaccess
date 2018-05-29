@@ -23,5 +23,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f [OR]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^.*$ frontend/web/index.php
-    RewriteRule !^(ru|en)/ /en%{REQUEST_URI} [L,R=301]
+    RewriteRule !^(ru|en)/ /%{REQUEST_URI} [L,R=301]
 </IfModule>
