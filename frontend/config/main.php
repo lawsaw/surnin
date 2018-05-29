@@ -64,14 +64,14 @@ return [
                 ],
             ],
         ],
-        'language' => 'en',
+        'language' => 'ru-RU',
         'i18n' => [
             'translations' => [
 
                 '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@common/messages',
-                    'sourceLanguage' => 'dd',
+                    'sourceLanguage' => 'en',
                     'fileMap' => [
                     ]
                 ]
