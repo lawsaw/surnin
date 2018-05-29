@@ -17,7 +17,7 @@ return [
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
-            'class' => 'lawsaw\components\LangRequest'
+            //'class' => 'lawsaw\components\LangRequest'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -44,7 +44,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'baseUrl' => '/',
-            'class' => \lawsaw\components\LangUrlManager::className(),
+            //'class' => \lawsaw\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
             'normalizer' => [
                 'class' => 'yii\web\UrlNormalizer',
