@@ -43,6 +43,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'baseUrl' => '/',
             'class' => \lawsaw\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
             'normalizer' => [
