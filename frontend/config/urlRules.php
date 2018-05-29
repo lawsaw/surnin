@@ -43,6 +43,12 @@ return [
     //'<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
     'controller:\w+>/<action:\w+>/<slug:[A-Za-z0-9 -_.]+>' => '<controller>/<action>',
 
+    '<language:(ru|ua|en)>/' => 'site/index',
+    '<language:(ru|ua|en)>/<action:(contact|login|logout)>/*' => 'site/<action>',
+    '<language:(ru|ua|en)>/<controller:\w+>/<id:\d+>'=>'<controller>/view',
+    '<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+    '<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
+
 
 
     'modal' => 'lawsaw/modal',

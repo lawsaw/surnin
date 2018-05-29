@@ -17,7 +17,9 @@ return [
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
-            'class' => 'lawsaw\components\LangRequest'
+            'class' => 'lawsaw\components\LangRequest',
+            'enableCookieValidation'=>true,
+            'enableCsrfValidation'=>true,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
