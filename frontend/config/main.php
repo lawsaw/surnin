@@ -11,7 +11,6 @@ use yii\web\UrlNormalizer;
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'language' => 'ru-RU',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
@@ -46,6 +45,7 @@ return [
             'showScriptName' => false,
             'baseUrl' => '/',
             'class' => \lawsaw\components\LangUrlManager::className(),
+            'languages' => ['en','ru','fr'],
             'rules' => require __DIR__."/urlRules.php",
             'normalizer' => [
                 'class' => 'yii\web\UrlNormalizer',
