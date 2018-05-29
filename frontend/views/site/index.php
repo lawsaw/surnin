@@ -52,8 +52,8 @@ Index page
     ]
 ]); ?>
 
-<?//= Language::widget([
-//    'frontTheme' => 'introductioned',
-//    'backTheme' => 'introductioned'
-//]);
-//?>
+<?= Language::widget([
+    'frontTheme' => 'introductioned',
+    'backTheme' => 'introductioned'
+]);
+?>
