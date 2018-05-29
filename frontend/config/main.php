@@ -15,7 +15,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
-            'baseUrl' => '/',
+            'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
             'class' => 'lawsaw\components\LangRequest'
         ],
@@ -43,7 +43,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'baseUrl' => '/',
+            'baseUrl' => '',
             'class' => \lawsaw\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
             'normalizer' => [
