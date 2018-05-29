@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b5be64f0bbeaebca5623a15944796af",
+    "content-hash": "c9429eca4c9d4623b651498a86b6d71b",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -330,16 +330,16 @@
         },
         {
             "name": "lawsaw/yii2-awesome",
-            "version": "1.0.9",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lawsaw/yii2-awesome.git",
-                "reference": "f5766f1dcf76fc54f24b3902ec9566421fa94d95"
+                "reference": "08d69e0211a3f51e01ec47e564968f1979c8ae7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lawsaw/yii2-awesome/zipball/f5766f1dcf76fc54f24b3902ec9566421fa94d95",
-                "reference": "f5766f1dcf76fc54f24b3902ec9566421fa94d95",
+                "url": "https://api.github.com/repos/lawsaw/yii2-awesome/zipball/08d69e0211a3f51e01ec47e564968f1979c8ae7a",
+                "reference": "08d69e0211a3f51e01ec47e564968f1979c8ae7a",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +369,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-05-19T19:25:09+00:00"
+            "time": "2018-05-28T21:40:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -429,6 +429,111 @@
                 "mailer"
             ],
             "time": "2018-05-25T07:45:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "3296adf6a6454a050679cde90f95350ad604b171"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3296adf6a6454a050679cde90f95350ad604b171",
+                "reference": "3296adf6a6454a050679cde90f95350ad604b171",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-04-26T10:06:28+00:00"
+        },
+        {
+            "name": "true/punycode",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/true/php-punycode.git",
+                "reference": "a4d0c11a36dd7f4e7cd7096076cab6d3378a071e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/true/php-punycode/zipball/a4d0c11a36dd7f4e7cd7096076cab6d3378a071e",
+                "reference": "a4d0c11a36dd7f4e7cd7096076cab6d3378a071e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/polyfill-mbstring": "^1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.7",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TrueBV\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Renan Gonçalves",
+                    "email": "renan.saddam@gmail.com"
+                }
+            ],
+            "description": "A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA)",
+            "homepage": "https://github.com/true/php-punycode",
+            "keywords": [
+                "idna",
+                "punycode"
+            ],
+            "time": "2016-11-16T10:37:54+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -780,22 +885,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/base.git",
-                "reference": "fb07b713f2a97cdf0c5c81c93fa26a0785eb44a6"
+                "reference": "b41e442cbf8b7a269b74492a12fb1cf2bd06c3b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/base/zipball/fb07b713f2a97cdf0c5c81c93fa26a0785eb44a6",
-                "reference": "fb07b713f2a97cdf0c5c81c93fa26a0785eb44a6",
+                "url": "https://api.github.com/repos/Codeception/base/zipball/b41e442cbf8b7a269b74492a12fb1cf2bd06c3b8",
+                "reference": "b41e442cbf8b7a269b74492a12fb1cf2bd06c3b8",
                 "shasum": ""
             },
             "require": {
                 "behat/gherkin": "^4.4.0",
                 "codeception/phpunit-wrapper": "^6.0.9|^7.0.6",
-                "codeception/stub": "^1.0",
+                "codeception/stub": "^2.0",
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "guzzlehttp/psr7": "~1.0",
-                "php": ">=5.4.0 <8.0",
+                "php": ">=5.6.0 <8.0",
                 "symfony/browser-kit": ">=2.7 <5.0",
                 "symfony/console": ">=2.7 <5.0",
                 "symfony/css-selector": ">=2.7 <5.0",
@@ -861,7 +966,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2018-03-31T22:36:34+00:00"
+            "time": "2018-05-26T22:24:57+00:00"
         },
         {
             "name": "codeception/phpunit-wrapper",
@@ -911,16 +1016,16 @@
         },
         {
             "name": "codeception/stub",
-            "version": "1.0.4",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Stub.git",
-                "reference": "681b62348837a5ef07d10d8a226f5bc358cc8805"
+                "reference": "b2eff325d8ff0b824ff659048be7be4e5767d7d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Stub/zipball/681b62348837a5ef07d10d8a226f5bc358cc8805",
-                "reference": "681b62348837a5ef07d10d8a226f5bc358cc8805",
+                "url": "https://api.github.com/repos/Codeception/Stub/zipball/b2eff325d8ff0b824ff659048be7be4e5767d7d0",
+                "reference": "b2eff325d8ff0b824ff659048be7be4e5767d7d0",
                 "shasum": ""
             },
             "require": {
@@ -940,7 +1045,7 @@
                 "MIT"
             ],
             "description": "Flexible Stub wrapper for PHPUnit's Mock Builder",
-            "time": "2018-05-17T09:31:08+00:00"
+            "time": "2018-05-18T14:33:08+00:00"
         },
         {
             "name": "codeception/verify",
@@ -1088,12 +1193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "239912a01c502f2d8f3c642eb2fcd4e58cf82a72"
+                "reference": "7fa8852adec06dabfbde1b028c4c9d9087558256"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/239912a01c502f2d8f3c642eb2fcd4e58cf82a72",
-                "reference": "239912a01c502f2d8f3c642eb2fcd4e58cf82a72",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/7fa8852adec06dabfbde1b028c4c9d9087558256",
+                "reference": "7fa8852adec06dabfbde1b028c4c9d9087558256",
                 "shasum": ""
             },
             "require": {
@@ -1110,7 +1215,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -1146,7 +1251,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-04-24T00:35:57+00:00"
+            "time": "2018-05-27T22:46:05+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1803,12 +1908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8855eea1afc5e07467457c6e7de7aac01b09ce21"
+                "reference": "526470b48d051ea68df646e0884a9349e776bd0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8855eea1afc5e07467457c6e7de7aac01b09ce21",
-                "reference": "8855eea1afc5e07467457c6e7de7aac01b09ce21",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/526470b48d051ea68df646e0884a9349e776bd0c",
+                "reference": "526470b48d051ea68df646e0884a9349e776bd0c",
                 "shasum": ""
             },
             "require": {
@@ -1879,7 +1984,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-05-24T04:52:03+00:00"
+            "time": "2018-05-25T12:14:11+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3099,65 +3204,6 @@
             "time": "2018-05-17T18:32:56+00:00"
         },
         {
-            "name": "symfony/polyfill-mbstring",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "3296adf6a6454a050679cde90f95350ad604b171"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3296adf6a6454a050679cde90f95350ad604b171",
-                "reference": "3296adf6a6454a050679cde90f95350ad604b171",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2018-04-26T10:06:28+00:00"
-        },
-        {
             "name": "symfony/yaml",
             "version": "3.4.x-dev",
             "source": {
@@ -3262,12 +3308,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "23bf61bc8a7cc229d7ce8689b1bf818a9e192cac"
+                "reference": "1fc2d96ee97d5052f44662563587a0213895343d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/23bf61bc8a7cc229d7ce8689b1bf818a9e192cac",
-                "reference": "23bf61bc8a7cc229d7ce8689b1bf818a9e192cac",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/1fc2d96ee97d5052f44662563587a0213895343d",
+                "reference": "1fc2d96ee97d5052f44662563587a0213895343d",
                 "shasum": ""
             },
             "require": {
@@ -3304,7 +3350,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2018-04-19T15:46:26+00:00"
+            "time": "2018-05-26T14:16:30+00:00"
         },
         {
             "name": "yiisoft/yii2-debug",

@@ -6,7 +6,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-//use yii\web\UrlNormalizer;
+use yii\web\UrlNormalizer;
 
 return [
     'id' => 'app-frontend',
@@ -43,13 +43,13 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            //'enableStrictParsing' => false,
+            'baseUrl' => '/',
             'class' => \lawsaw\components\LangUrlManager::className(),
             'rules' => require __DIR__."/urlRules.php",
-//            'normalizer' => [
-//                'class' => 'yii\web\UrlNormalizer',
-//                'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
-//            ],
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
+            ],
         ],
         'assetManager' => [
             'bundles' => [
@@ -64,14 +64,14 @@ return [
                 ],
             ],
         ],
-        'language' => 'ru-RU',
+        'language' => 'en',
         'i18n' => [
             'translations' => [
 
                 '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@common/messages',
-                    'sourceLanguage' => 'en',
+                    'sourceLanguage' => 'dd',
                     'fileMap' => [
                     ]
                 ]

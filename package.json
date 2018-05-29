@@ -19,5 +19,8 @@
   "homepage": "https://bitbucket.org/lawsaw/lawsaw-yii2-advanced#readme",
   "devDependencies": {
     "lawsaw-api": "^3.0.88"
+  },
+  "dependencies": {
+    "npm": "^6.1.0"
   }
 }
