@@ -77,7 +77,7 @@ class SiteController extends Controller
 //            'href' => 'stylefff.css',
 //        ]);
         \Yii::$app->layout = 'layout-main';
-        \Yii::$app->language = 'ru-RU';
+        //\Yii::$app->language = 'ru-RU';
         $this->view->params['cssFile'] = '/css/index.min.css?v='.\Yii::$app->params['styleVersion'];
         $this->view->params['jsFile'] = '/js/index.min.js?v='.\Yii::$app->params['styleVersion'];
         return $this->render('index');

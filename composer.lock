@@ -334,12 +334,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lawsaw/yii2-awesome.git",
-                "reference": "08d69e0211a3f51e01ec47e564968f1979c8ae7a"
+                "reference": "75b16ad3fb90bbb4fc5ee58da8ba22879c0b237e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lawsaw/yii2-awesome/zipball/08d69e0211a3f51e01ec47e564968f1979c8ae7a",
-                "reference": "08d69e0211a3f51e01ec47e564968f1979c8ae7a",
+                "url": "https://api.github.com/repos/lawsaw/yii2-awesome/zipball/75b16ad3fb90bbb4fc5ee58da8ba22879c0b237e",
+                "reference": "75b16ad3fb90bbb4fc5ee58da8ba22879c0b237e",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +369,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-05-28T21:40:04+00:00"
+            "time": "2018-05-29T22:27:56+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1992,12 +1992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "e244c19aec6a1f0a2ff9e498b9b4bed22537730a"
+                "reference": "3eaf040f20154d27d6da59ca2c6e28ac8fd56dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/e244c19aec6a1f0a2ff9e498b9b4bed22537730a",
-                "reference": "e244c19aec6a1f0a2ff9e498b9b4bed22537730a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3eaf040f20154d27d6da59ca2c6e28ac8fd56dce",
+                "reference": "3eaf040f20154d27d6da59ca2c6e28ac8fd56dce",
                 "shasum": ""
             },
             "require": {
@@ -2043,7 +2043,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-01-07T17:10:51+00:00"
+            "time": "2018-05-29T13:50:43+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2804,12 +2804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "36f83f642443c46f3cf751d4d2ee5d047d757a27"
+                "reference": "1b97071a26d028c9bd4588264e101e14f6e7cd00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/36f83f642443c46f3cf751d4d2ee5d047d757a27",
-                "reference": "36f83f642443c46f3cf751d4d2ee5d047d757a27",
+                "url": "https://api.github.com/repos/symfony/console/zipball/1b97071a26d028c9bd4588264e101e14f6e7cd00",
+                "reference": "1b97071a26d028c9bd4588264e101e14f6e7cd00",
                 "shasum": ""
             },
             "require": {
@@ -2865,7 +2865,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-16T08:49:21+00:00"
+            "time": "2018-05-23T05:02:55+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -3308,12 +3308,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "1fc2d96ee97d5052f44662563587a0213895343d"
+                "reference": "53927dddf3afa2088b355188e143bba42159bf5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/1fc2d96ee97d5052f44662563587a0213895343d",
-                "reference": "1fc2d96ee97d5052f44662563587a0213895343d",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/53927dddf3afa2088b355188e143bba42159bf5d",
+                "reference": "53927dddf3afa2088b355188e143bba42159bf5d",
                 "shasum": ""
             },
             "require": {
@@ -3350,7 +3350,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2018-05-26T14:16:30+00:00"
+            "time": "2018-05-29T14:25:02+00:00"
         },
         {
             "name": "yiisoft/yii2-debug",
