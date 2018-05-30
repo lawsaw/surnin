@@ -154,7 +154,15 @@ use lawsaw\widgets\Button;
 //            ]); ?>
 
 
-    <div class="formAwesome-group grid-row grid-row--form grid-row--column field-testform-recaptcha required">
+    <?php
+
+        // Get model name for validation using
+        $captcha = explode('\\',get_class($model));
+        $captcha = strtolower(end($captcha));
+
+    ?>
+
+    <div class="formAwesome-group grid-row grid-row--form grid-row--column field-<?= $captcha; ?>-recaptcha required">
         <div class="grid-cell grid-cell--form-label formAwesome-label-container">
             <label class="formAwesome-label">reCaptcha</label>
         </div>
