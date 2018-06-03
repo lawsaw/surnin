@@ -6,6 +6,15 @@ use lawsaw\widgets\Language;
 
 ?>
 
+
+<?php
+
+
+
+    \frontend\controllers\debug(15);
+
+?>
+
 <?= Seo::widget([
     'title'         => 'Заголовок',
     'description'   => 'Описание',

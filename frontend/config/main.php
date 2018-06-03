@@ -79,4 +79,15 @@ return [
         ],
     ],
     'params' => $params,
+    'modules' => [
+        'lawsaw' => [
+            'class' => 'lawsaw\Module',
+            'controllerMap' => [
+                'index' => [
+                    'class' => 'frontend\controllers\ModalController'
+                ]
+            ]
+        ]
+    ]
+
 ];

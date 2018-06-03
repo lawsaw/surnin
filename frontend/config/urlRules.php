@@ -40,12 +40,13 @@ return [
 
 
     '/' => 'site/index',
+
+   'modal' => 'lawsaw/modal',
+
+    [
+        'pattern' => '<action>',
+        'route' => 'site/<action>'
+    ],
+
     '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
-
-
-
-    'modal' => 'lawsaw/modal',
-
-
-
 ];

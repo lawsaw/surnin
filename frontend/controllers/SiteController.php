@@ -4,7 +4,6 @@ namespace frontend\controllers;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
@@ -16,7 +15,7 @@ use frontend\models\ContactForm;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AppController
 {
     /**
      * {@inheritdoc}
@@ -247,6 +246,22 @@ class SiteController extends Controller
         echo json_encode([
             'country' => $country
         ]);
+    }
+
+
+    public function actionFuck($id = null) {
+
+
+//        \Yii::$app->layout = 'layout-main';
+//        //\Yii::$app->language = 'ru-RU';
+//        $this->view->params['cssFile'] = '/css/index.min.css?v='.\Yii::$app->params['styleVersion'];
+//        $this->view->params['jsFile'] = '/js/index.min.js?v='.\Yii::$app->params['styleVersion'];
+//        return $this->render('index', ['id' => $id]);
+
+        $this->debug(Yii::$app);
+
+
+
     }
 
 
