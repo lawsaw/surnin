@@ -13,6 +13,7 @@ use lawsaw\widgets\Button;
 
 ?>
 
+<?php $this->beginContent('@frontend/views/layouts/layout-modal.php'); ?>
 
 <div class="site-contact">
 
@@ -210,3 +211,5 @@ use lawsaw\widgets\Button;
 
 
 </div>
+
+<? $this->endContent(); ?>
