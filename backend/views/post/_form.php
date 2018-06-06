@@ -5,6 +5,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
+use kartik\file\FileInput;
 use kartik\datetime\DateTimePicker;
 use yii\bootstrap\Tabs;
 use lawsaw\models\Lang;
@@ -30,7 +31,28 @@ use lawsaw\models\Lang;
     ) ?>
 
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => 255]) ?>
+
+
+    <?=$form->field($model, 'imageFile')
+        /**
+         * kartik-v FileInput widget
+         * @link https://github.com/kartik-v/yii2-widget-fileinput
+         */
+        ->widget(FileInput::classname(), [
+            'options' =>
+                [
+                    'accept' => 'image/*',
+                ],
+            /**
+             * for more options @link http://demos.krajee.com/widget-details/fileinput
+             * */
+            'pluginOptions' =>
+                [
+                    'showUpload' => false,
+                    'showRemove' => false,
+                    'initialPreview' => $model->image?Html::img('/storage'.$model->image , ['width' => '200']):false,
+                ],
+        ])->label('Image');?>
 
     <?php
     foreach(Lang::getLangList() as $key => $lang) {

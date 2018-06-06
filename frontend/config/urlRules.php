@@ -39,7 +39,9 @@ return [
 //    ],
 
 
-    '/' => 'site/index',
+    //'/' => 'site/index',
+
+
 
    'modal' => 'lawsaw/modal',
 
@@ -52,10 +54,10 @@ return [
         'route' => 'post/view',
     ],
 
-    /*[
+    [
         'pattern' => '<action>',
         'route' => 'site/<action>'
-    ],*/
+    ],
 
     //'<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
     //'<_c:[\w\-]+>' => '<_c>/index',

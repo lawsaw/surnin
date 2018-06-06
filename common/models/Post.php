@@ -12,6 +12,7 @@ use yii\web\NotFoundHttpException;
 use omgdef\multilingual\MultilingualQuery;
 use omgdef\multilingual\MultilingualBehavior;
 use lawsaw\models\Lang;
+use yii\imagine\Image;
 
 /**
  * Модель постов.
@@ -19,6 +20,7 @@ use lawsaw\models\Lang;
  * @property string $id
  * @property string $title заголовок
  * @property string $anons анонс
+ * @property string $image картинка
  * @property string $content контент
  * @property string $category_id категория
  * @property string $author_id автор
@@ -31,6 +33,9 @@ use lawsaw\models\Lang;
  */
 class Post extends ActiveRecord
 {
+
+    public $imageFile;
+
     /**
      * Статус поста: опубликованн.
      */
@@ -69,7 +74,8 @@ class Post extends ActiveRecord
             [['category_id', 'author_id'], 'integer'],
             [['anons', 'content', 'description', 'publish_status'], 'string'],
             [['publish_date', 'tags'], 'safe'],
-            [['title', 'image'], 'string', 'max' => 255]
+            [['title', 'image'], 'string', 'max' => 255],
+            [['imageFile'] , 'imageValidate']
         ];
     }
 
@@ -106,6 +112,7 @@ class Post extends ActiveRecord
         return [
             'id' => Yii::t('backend', 'ID'),
             'title' => Yii::t('backend', 'Title'),
+            'image' => 'Image',
             'description' => 'Description',
             'anons' => Yii::t('backend', 'Announce'),
             'content' => Yii::t('backend', 'Content'),
@@ -116,6 +123,7 @@ class Post extends ActiveRecord
             'author_id' => Yii::t('backend', 'Author ID'),
             'publish_status' => Yii::t('backend', 'Publish status'),
             'publish_date' => Yii::t('backend', 'Publish date'),
+            'imageFile' => 'Image File',
         ];
     }
 
@@ -223,6 +231,7 @@ class Post extends ActiveRecord
     public function beforeSave($insert)
     {
         parent::beforeSave($insert);
+
         if($this->isNewRecord)
         {
             $this->publish_date = date('Y-m-d H:i:s');
@@ -231,6 +240,17 @@ class Post extends ActiveRecord
         {
             $this->publish_date = date('Y-m-d H:i:s');
         }
+
+        if(!empty($this->imageFile))
+        {
+            $filename = '/images/news/'.md5($this->imageFile->name) . "." . $this->imageFile->extension;
+
+            $this->imageFile->saveAs(Yii::getAlias('@storage').$filename , true);
+
+            $this->image = $filename;
+        }
+
+
         return true;
     }
 
@@ -267,5 +287,19 @@ class Post extends ActiveRecord
     public static function find()
     {
         return new MultilingualQuery(get_called_class());
+    }
+
+    public function imageValidate($attribute)
+    {
+        if (!empty($this->imageFile)) {
+            $image = $this->imageFile;
+            /**@var $image \yii\web\UploadedFile */
+
+            list($width, $height) = getimagesize($image->tempName);
+
+            if ($height !== 600 || $width !== 1000) {
+                //$this->addError($attribute, 'Image must be 1000x600 only');
+            }
+        }
     }
 }

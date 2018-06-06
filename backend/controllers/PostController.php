@@ -13,6 +13,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
+use yii\web\UploadedFile;
 
 /**
  * CRUD операции модели "Посты".
@@ -76,10 +77,33 @@ class PostController extends Controller
     {
         $model = new Post();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect(['view', 'id' => $model->id]);
+//        } else {
+//            $model->author_id = Yii::$app->user->id;
+//            return $this->render('create', [
+//                'model' => $model,
+//                'category' => Category::find()->all(),
+//                'tags' => Tags::find()->all(),
+//                'authors' => User::find()->all()
+//            ]);
+//        }
+
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                $model->author_id = Yii::$app->user->id;
+                return $this->render('create', [
+                    'model' => $model,
+                    'category' => Category::find()->all(),
+                    'tags' => Tags::find()->all(),
+                    'authors' => User::find()->all()
+                ]);
+            }
         } else {
-            $model->author_id = Yii::$app->user->id;
             return $this->render('create', [
                 'model' => $model,
                 'category' => Category::find()->all(),
@@ -87,6 +111,8 @@ class PostController extends Controller
                 'authors' => User::find()->all()
             ]);
         }
+
+
     }
 
     /**
@@ -98,8 +124,30 @@ class PostController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect(['view', 'id' => $model->id]);
+//        } else {
+//            return $this->render('update', [
+//                'model' => $model,
+//                'authors' => User::find()->all(),
+//                'tags' => Tags::find()->all(),
+//                'category' => Category::find()->all()
+//            ]);
+//        }
+
+
+        if ($model->load(Yii::$app->request->post())){
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }else {
+                return $this->render('update', [
+                    'model' => $model,
+                    'authors' => User::find()->all(),
+                    'tags' => Tags::find()->all(),
+                    'category' => Category::find()->all()
+                ]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
