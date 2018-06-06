@@ -19,6 +19,7 @@ use yii\helpers\Html;
 </div>
 
 <div class="content">
+    <img src="<?= $model->image ?>" />
     <?= $model->anons ?>
 </div>
 

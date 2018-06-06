@@ -50,7 +50,7 @@ use lawsaw\models\Lang;
                 [
                     'showUpload' => false,
                     'showRemove' => false,
-                    'initialPreview' => $model->image?Html::img('/storage'.$model->image , ['width' => '200']):false,
+                    'initialPreview' => $model->image?Html::img($model->image , ['width' => '200']):false,
                 ],
         ])->label('Image');?>
 
