@@ -2,7 +2,6 @@
 
 use lawsaw\widgets\Seo;
 use lawsaw\widgets\Button;
-use lawsaw\widgets\Language;
 
 ?>
 
@@ -61,8 +60,4 @@ Index page
     ]
 ]); ?>
 
-<?= Language::widget([
-    'frontTheme' => 'introductioned',
-    'backTheme' => 'introductioned'
-]);
-?>
+

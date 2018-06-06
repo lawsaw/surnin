@@ -44,9 +44,22 @@ return [
    'modal' => 'lawsaw/modal',
 
     [
+        'pattern' => 'news',
+        'route' => 'post/index',
+    ],
+    [
+        'pattern' => 'news/<id:\d+>',
+        'route' => 'post/view',
+    ],
+
+    /*[
         'pattern' => '<action>',
         'route' => 'site/<action>'
-    ],
+    ],*/
+
+    //'<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
+    //'<_c:[\w\-]+>' => '<_c>/index',
+    //'<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
 
     '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 ];

@@ -7,6 +7,8 @@ use yii\web\Controller;
 class AppController extends Controller
 {
 
+    public $layout = 'layout-main';
+
 
     public function debug($arr) {
 

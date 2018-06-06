@@ -13,8 +13,9 @@ use yii\filters\VerbFilter;
 /**
  * Контролеры "Постов".
  */
-class PostController extends Controller
+class PostController extends AppController
 {
+
     public function behaviors()
     {
         return [

@@ -3,6 +3,8 @@
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\web\View;
+use yii\helpers\Html;
+use lawsaw\widgets\Language;
 
 ?>
 
@@ -11,45 +13,45 @@ use yii\web\View;
     <?php $this->registerLinkTag([
         'rel' => 'stylesheet',
         'type' => 'text/css',
-        'href' => $this->params['cssFile'],
+        //'href' => $this->params['cssFile'],
+        'href' => '/css/index.min.css?v='.\Yii::$app->params['styleVersion'],
     ]);?>
 
     <div class="wrap">
         <div class="wrapPage">
             <div class="wrapPageBody">
 
-                <?php
-                    NavBar::begin([
-                        'brandLabel' => Yii::$app->name,
-                        'brandUrl' => Yii::$app->homeUrl,
-                        'options' => [
-                            'class' => 'navbar-inverse navbar-fixed-top',
-                        ],
-                    ]);
-                    $menuItems = [
-                        ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'About', 'url' => ['/site/about']],
-                        ['label' => 'Contact', 'url' => ['/site/contact']],
-                    ];
-                    if (Yii::$app->user->isGuest) {
-                        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-                    } else {
-                        $menuItems[] = '<li>'
-                            . Html::beginForm(['/site/logout'], 'post')
-                            . Html::submitButton(
-                                'Logout (' . Yii::$app->user->identity->username . ')',
-                                ['class' => 'btn btn-link logout']
-                            )
-                            . Html::endForm()
-                            . '</li>';
-                    }
-                    echo Nav::widget([
-                        'options' => ['class' => 'navbar-nav navbar-right'],
-                        'items' => $menuItems,
-                    ]);
-                    NavBar::end();
+                <?= Language::widget([
+                    'frontTheme' => 'introductioned',
+                    'backTheme' => 'introductioned'
+                ]);
                 ?>
+
+                <ul>
+                    <li><?= Html::a('Home', ['site/index']) ?></li>
+                    <li><?= Html::a('About', ['site/about']) ?></li>
+                    <li><?= Html::a('Contact', ['site/contact']) ?></li>
+                    <li><?= Html::a('Blog', ['post/index']) ?></li>
+                    <li>
+                        <?php
+
+                        if (Yii::$app->user->isGuest) {
+                            echo Html::a('Signup', ['site/signup']);
+                            echo Html::a('Login', ['site/login']);
+                        } else {
+                            echo ''
+                                . Html::beginForm(['/site/logout'], 'post')
+                                . Html::submitButton(
+                                    'Logout (' . Yii::$app->user->identity->username . ')',
+                                    ['class' => 'btn btn-link logout']
+                                )
+                                . Html::endForm()
+                                . '';
+                        }
+                        ?>
+                    </li>
+                    <li></li>
+                </ul>
 
                 <?= $content ?>
 

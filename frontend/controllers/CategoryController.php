@@ -15,7 +15,7 @@ use yii\web\Controller;
 /**
  * Контроллеры "Категорий".
  */
-class CategoryController extends Controller
+class CategoryController extends AppController
 {
     public function actionView($id)
     {

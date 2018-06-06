@@ -21,7 +21,10 @@ class m180601_080225_blog extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
         }
 
-        /* main START */
+
+        /* Category START */
+
+
         $this->createTable(Category::tableName(), [
             'id' => $this->primaryKey(),
             //'title' => $this->string()->notNull(),
@@ -35,10 +38,17 @@ class m180601_080225_blog extends Migration
             'title' => $this->string()->notNull(),
         ], $tableOptions);
 
+
         $this->createIndex('FK_category', Category::tableNameTranslate(), 'category_id');
         $this->addForeignKey(
             'FK_category_post', Category::tableNameTranslate(), 'category_id', Category::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
+
+
+        /* Category END */
+
+
+        /* Post START */
 
 
         $this->createTable(Post::tableName(), [
@@ -53,6 +63,25 @@ class m180601_080225_blog extends Migration
             'publish_date' => $this->timestamp()->notNull(),
         ], $tableOptions);
 
+
+        $this->createIndex('FK_post_author', Post::tableName(), 'author_id');
+        $this->addForeignKey(
+            'FK_post_author', Post::tableName(), 'author_id', User::tableName(), 'id', 'SET NULL', 'CASCADE'
+        );
+
+
+        $this->createIndex('FK_post_category', Post::tableName(), 'category_id');
+        $this->addForeignKey(
+            'FK_post_category', Post::tableName(), 'category_id', Category::tableName(), 'id', 'SET NULL', 'CASCADE'
+        );
+
+
+        //$this->execute("ALTER TYPE post_publish_status OWNER TO root;");
+        $this->execute("DROP TYPE IF EXISTS post_publish_status;");
+        $this->execute("CREATE TYPE post_publish_status AS enum('draft', 'publish');");
+        $this->addColumn(Post::tableName() , 'publish_status' , "post_publish_status NOT NULL DEFAULT 'draft'");
+
+
         $this->createTable(Post::tableNameTranslate(), [
             'id' => $this->primaryKey(),
             'post_id' => $this->integer(),
@@ -63,53 +92,42 @@ class m180601_080225_blog extends Migration
             'content' => $this->text()->notNull(),
         ], $tableOptions);
 
+
         $this->createIndex('FK_translate', Post::tableNameTranslate(), 'post_id');
         $this->addForeignKey(
             'FK_translate_post', Post::tableNameTranslate(), 'post_id', Post::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
 
-        //$this->execute("ALTER TYPE post_publish_status OWNER TO root;");
-        $this->execute("DROP TYPE IF EXISTS post_publish_status;");
-        $this->execute("CREATE TYPE post_publish_status AS enum('draft', 'publish');");
-        $this->addColumn(Post::tableName() , 'publish_status' , "post_publish_status NOT NULL DEFAULT 'draft'");
 
-        $this->createIndex('FK_post_author', Post::tableName(), 'author_id');
-        $this->addForeignKey(
-            'FK_post_author', Post::tableName(), 'author_id', User::tableName(), 'id', 'SET NULL', 'CASCADE'
-        );
-
-        $this->createIndex('FK_post_category', Post::tableName(), 'category_id');
-        $this->addForeignKey(
-            'FK_post_category', Post::tableName(), 'category_id', Category::tableName(), 'id', 'SET NULL', 'CASCADE'
-        );
+        /* Post END */
 
 
-        /* main START */
+        /* TAGS START */
 
 
-
-        /* tags START */
         $this->createTable(Tags::tableName(), [
             'id' => $this->primaryKey(),
             //'title' => $this->string()->notNull(),
         ], $tableOptions);
 
-        $this->createTable(TagPost::tableName(), [
-            'tag_id' => $this->integer(),
-            'post_id' => $this->integer()
-        ], $tableOptions);
 
         $this->createIndex('FK_tag', TagPost::tableName(), 'tag_id');
         $this->addForeignKey(
             'FK_tag_post', TagPost::tableName(), 'tag_id', Tags::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
 
+
+        $this->createTable(TagPost::tableName(), [
+            'id' => $this->primaryKey(),
+            'tag_id' => $this->integer(),
+            'post_id' => $this->integer()
+        ], $tableOptions);
+
+
         $this->createIndex('FK_post', TagPost::tableName(), 'post_id');
         $this->addForeignKey(
             'FK_post_tag', TagPost::tableName(), 'post_id', Post::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
-
-        $this->addColumn(TagPost::tableName(), 'id', $this->primaryKey()->first());
 
 
         $this->createTable(Tags::tableNameTranslate(), [
@@ -119,21 +137,19 @@ class m180601_080225_blog extends Migration
             'title' => $this->string()->notNull(),
         ], $tableOptions);
 
+
         $this->createIndex('FK_text', Tags::tableNameTranslate(), 'tag_id');
         $this->addForeignKey(
             'FK_text_tag', Tags::tableNameTranslate(), 'tag_id', Tags::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
 
-//        $this->createIndex('FK_lang', Tags::tableNameTranslate(), 'lang_id');
-//        $this->addForeignKey(
-//            'FK_lang_tag', Tags::tableNameTranslate(), 'lang_id', 'lang', 'id', 'SET NULL', 'CASCADE'
-//        );
+
+        /* TAGS END */
 
 
-        /* tags END */
+        /* COMMENT START */
 
 
-        /* comment START */
         $this->createTable(Comment::tableName(), [
             'id' => $this->primaryKey(),
             'pid' => $this->integer(),
@@ -144,48 +160,45 @@ class m180601_080225_blog extends Migration
             'author_id' => $this->integer()
         ], $tableOptions);
 
+
         //$this->execute("ALTER TYPE comment_publish_status OWNER TO root;");
         $this->execute("DROP TYPE IF EXISTS comment_publish_status;");
         $this->execute("CREATE TYPE comment_publish_status AS enum('moderate', 'publish');");
         $this->addColumn(Comment::tableName() , 'publish_status' , "comment_publish_status NOT NULL DEFAULT 'moderate'");
+
 
         $this->createIndex('FK_comment_author', Comment::tableName(), 'author_id');
         $this->addForeignKey(
             'FK_comment_author', Comment::tableName(), 'author_id', User::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
 
+
         $this->createIndex('FK_comment_post', Comment::tableName(), 'post_id');
         $this->addForeignKey(
             'FK_comment_post', Comment::tableName(), 'post_id', Post::tableName(), 'id', 'SET NULL', 'CASCADE'
         );
-        /* comment END */
+
+
+        /* COMMENT END */
 
     }
 
     public function down()
     {
 
-        /* main START */
         $this->dropForeignKey('FK_category_post', Category::tableNameTranslate());
         $this->dropForeignKey('FK_translate_post', Post::tableNameTranslate());
+        $this->dropForeignKey('FK_tag_post', TagPost::tableName());
+        $this->dropForeignKey('FK_post_tag', TagPost::tableName());
+        $this->dropForeignKey('FK_text_tag', Tags::tableNameTranslate());
+
         $this->dropTable(Post::tableName());
         $this->dropTable(Post::tableNameTranslate());
         $this->dropTable(Category::tableName());
         $this->dropTable(Category::tableNameTranslate());
-        /* main START */
-
-        /* tags START */
-        $this->dropForeignKey('FK_tag_post', TagPost::tableName());
-        $this->dropForeignKey('FK_post_tag', TagPost::tableName());
-        $this->dropForeignKey('FK_text_tag', Tags::tableNameTranslate());
-        $this->dropColumn(TagPost::tableName(), 'id');
         $this->dropTable(Tags::tableName());
         $this->dropTable(TagPost::tableName());
-        /* tags END */
-
-        /* comment START */
         $this->dropTable(Comment::tableName());
-        /* comment END */
 
         return false;
     }

@@ -20,6 +20,7 @@ class SiteController extends AppController
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
@@ -77,8 +78,8 @@ class SiteController extends AppController
 //        ]);
         \Yii::$app->layout = 'layout-main';
         //\Yii::$app->language = 'ru-RU';
-        $this->view->params['cssFile'] = '/css/index.min.css?v='.\Yii::$app->params['styleVersion'];
-        $this->view->params['jsFile'] = '/js/index.min.js?v='.\Yii::$app->params['styleVersion'];
+//        $this->view->params['cssFile'] = '/css/index.min.css?v='.\Yii::$app->params['styleVersion'];
+        //$this->view->params['jsFile'] = '/js/index.min.js?v='.\Yii::$app->params['styleVersion'];
         return $this->render('index');
     }
 

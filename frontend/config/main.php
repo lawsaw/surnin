@@ -51,19 +51,19 @@ return [
                 'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
             ],
         ],
-        'assetManager' => [
-            'bundles' => [
-                'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [],
-                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'js'=>[]
-                ],
-                'yii\web\JqueryAsset' => [
-                    'js'=>[]
-                ],
-            ],
-        ],
+//        'assetManager' => [
+//            'bundles' => [
+//                'yii\bootstrap\BootstrapAsset' => [
+//                    'css' => [],
+//                ],
+//                'yii\bootstrap\BootstrapPluginAsset' => [
+//                    'js'=>[]
+//                ],
+//                'yii\web\JqueryAsset' => [
+//                    'js'=>[]
+//                ],
+//            ],
+//        ],
         'language' => 'en',
         'i18n' => [
             'translations' => [

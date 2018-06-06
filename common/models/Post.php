@@ -219,6 +219,21 @@ class Post extends ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public function beforeSave($insert)
+    {
+        parent::beforeSave($insert);
+        if($this->isNewRecord)
+        {
+            $this->publish_date = date('Y-m-d H:i:s');
+        }
+        if(empty($this->post_time))
+        {
+            $this->publish_date = date('Y-m-d H:i:s');
+        }
+        return true;
+    }
+
     public function afterSave($insert, $changedAttributes)
     {
         TagPost::deleteAll(['post_id' => $this->id]);

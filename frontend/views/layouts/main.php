@@ -41,11 +41,11 @@ AppAsset::register($this);
 
 <body>
 
-<?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
 
-<?= $content ?>
+        <?= $content ?>
 
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 
 </body>
 

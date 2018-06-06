@@ -16,7 +16,7 @@ use yii\web\Controller;
 /**
  * Контроллер "Тэги".
  */
-class TagController extends Controller
+class TagController extends AppController
 {
     /**
      * Просмотр списка постов по тегу
