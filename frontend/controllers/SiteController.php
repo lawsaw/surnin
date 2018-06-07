@@ -76,7 +76,7 @@ class SiteController extends AppController
 //            'rel' => 'stylesheet',
 //            'href' => 'stylefff.css',
 //        ]);
-        \Yii::$app->layout = 'layout-main';
+        //\Yii::$app->layout = 'layout-main';
         //\Yii::$app->language = 'ru-RU';
 //        $this->view->params['cssFile'] = '/css/index.min.css?v='.\Yii::$app->params['styleVersion'];
         //$this->view->params['jsFile'] = '/js/index.min.js?v='.\Yii::$app->params['styleVersion'];
@@ -93,7 +93,6 @@ class SiteController extends AppController
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -104,6 +103,11 @@ class SiteController extends AppController
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionRefer()
+    {
+        var_dump($this->goBack2());
     }
 
     /**

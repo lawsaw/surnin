@@ -5,6 +5,7 @@ use yii\bootstrap\NavBar;
 use yii\web\View;
 use yii\helpers\Html;
 use lawsaw\widgets\Language;
+use lawsaw\widgets\Button;
 
 ?>
 
@@ -37,7 +38,25 @@ use lawsaw\widgets\Language;
 
                         if (Yii::$app->user->isGuest) {
                             echo Html::a('Signup', ['site/signup']);
+                            echo ' / ';
                             echo Html::a('Login', ['site/login']);
+                            echo Button::widget([
+                                'classContent' => 'awModalOpen',
+                                'theme' => 'lightblue',
+                                'size' => 'sizeL',
+                                'href' => '#',
+                                'label' => 'Login modal',
+                                'modal' => [
+                                    'id' => 'loginModal',
+                                    'mode' => '',
+                                    'anim' => [
+                                        'in' => 'zoomIn',
+                                        'out' => 'zoomIn',
+                                    ],
+                                    'workClass' => '',
+                                    'model' => 'LoginForm',
+                                ]
+                            ]);
                         } else {
                             echo ''
                                 . Html::beginForm(['/site/logout'], 'post')

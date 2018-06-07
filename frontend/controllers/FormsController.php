@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\TestForm;
+use common\models\LoginForm;
 use yii\web\Response;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
@@ -47,6 +48,31 @@ class FormsController extends AppController
         else
         {
             return ActiveForm::validate($model);
+        }
+    }
+
+    public function actionLogin()
+    {
+
+
+        $model = new LoginForm();
+
+
+        //if($model->load( ['TestForm' => $data] ) && $model->validate())
+        if ($model->load(Yii::$app->request->post()) && $model->login())
+        {
+
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Thank you for your request! We will contact you as soon as possible',
+            ]);
+
+
+
+        }
+        else
+        {
+            var_dump('fail');
         }
     }
 

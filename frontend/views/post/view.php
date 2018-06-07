@@ -50,6 +50,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php endforeach; ?>
 </div>
 
-<?= $this->render('../comment/_form', [
-    'model' => $commentForm
-]) ?>
+<?= Html::a('refer', ['site/refer']) ?>
+
+<?php if (Yii::$app->user->isGuest) { ?>
+
+    Вы можете оставить комментарий после <?= Html::a('авторизации', ['site/login']) ?> или, если у вас нет аккаунта, <?= Html::a('создайте его', ['site/signup']) ?>
+
+<?php
+
+} else {
+
+    $this->render('../comment/_form', [
+        'model' => $commentForm
+    ]);
+
+}
+
+?>
+
