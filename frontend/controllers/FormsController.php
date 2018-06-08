@@ -54,25 +54,33 @@ class FormsController extends AppController
     public function actionLogin()
     {
 
+        \Yii::$app->response->format = Response::FORMAT_JSON;
 
         $model = new LoginForm();
 
 
-        //if($model->load( ['TestForm' => $data] ) && $model->validate())
-        if ($model->load(Yii::$app->request->post()) && $model->login())
+        $data = \Yii::$app->request->get('LoginForm');
+        if($model->load( ['LoginForm' => $data] ) && $model->validate())
         {
 
-            echo json_encode([
-                'status' => 'success',
-                'message' => 'Thank you for your request! We will contact you as soon as possible',
-            ]);
+            if($model->login()) {
+                echo json_encode([
+                    'status' => 'success',
+                    'message' => 'Thank you for your request! We will contact you as soon as possible',
+                ]);
+            } else {
+                echo json_encode([
+                    'status' => 'fail',
+                    'message' => 'Фейл(((',
+                ]);
+            }
 
-
+            \Yii::$app->end();
 
         }
         else
         {
-            var_dump('fail');
+            return ActiveForm::validate($model);
         }
     }
 
