@@ -43,7 +43,7 @@ return [
 
 
 
-   'modal' => 'lawsaw/modal',
+   'modal' => 'lawsaw/modal/index',
 
     [
         'pattern' => 'news',
