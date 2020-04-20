@@ -1,0 +1,61 @@
+#rootLoader {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(#fff, 1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-fill-mode: both;
+  opacity: 1;
+
+  &.rootLoader--off {
+
+    animation-name: rootLoader-off;
+
+    img {
+
+      animation-name: rootLoader-image-off;
+
+    }
+
+  }
+
+  img {
+
+    display: block;
+    transform-origin: center center;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-fill-mode: both;
+
+  }
+
+}
+
+@keyframes rootLoader-off {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rootLoader-image-off {
+  to {
+    transform: scale(0) rotateX(90deg);
+  }
+}

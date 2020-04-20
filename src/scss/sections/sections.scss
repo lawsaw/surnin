@@ -1,0 +1,28 @@
+.section {
+
+  &_header {
+    color: #fff;
+    .phone {
+      flex-grow: unset;
+    }
+  }
+
+  &_promo {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+  }
+
+  &_services {}
+
+  &_gallery {}
+
+  &_feedback {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &_footer {
+    color: #fff;
+  }
+
+}

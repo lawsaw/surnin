@@ -1,0 +1,34 @@
+extends layout/body
+
+block seo
+    +opengraph({
+        'title': 'Surnin',
+        'description': 'Surnin',
+        'image': 'Surnin',
+        'url': 'Surnin',
+    })
+block body
+    .wrap
+
+        .wrap_header
+            include sections/header
+
+        .wrap_promo
+            include sections/promo
+
+        .wrap_services
+            include sections/services
+
+        .wrap_gallery
+            include sections/gallery
+
+        .wrap_feedback
+            include sections/feedback
+
+        .wrap_footer
+            include sections/footer
+
+
+
+
+

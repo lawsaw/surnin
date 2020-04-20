@@ -15,20 +15,24 @@ use lawsaw\widgets\Button;
         'rel' => 'stylesheet',
         'type' => 'text/css',
         //'href' => $this->params['cssFile'],
-        'href' => '/css/index.min.css?v='.\Yii::$app->params['styleVersion'],
+        //'href' => '/css/index.min.css?v='.\Yii::$app->params['styleVersion'],
+        'href' => '/css/style.css?v='.\Yii::$app->params['styleVersion'],
     ]);?>
 
     <div class="wrap">
         <div class="wrapPage">
             <div class="wrapPageBody">
 
-                <?= Language::widget([
+                <?php
+                    /*Language::widget([
                     'frontTheme' => 'introductioned',
                     'backTheme' => 'introductioned'
-                ]);
+                ]);*/
                 ?>
 
-                <ul>
+                <?php /*
+
+ <ul>
                     <li><?= Html::a('Home', ['site/index']) ?></li>
                     <li><?= Html::a('About', ['site/about']) ?></li>
                     <li><?= Html::a('Contact', ['site/contact']) ?></li>
@@ -71,6 +75,8 @@ use lawsaw\widgets\Button;
                     </li>
                     <li></li>
                 </ul>
+                */?>
+
 
                 <?= $content ?>
 
@@ -89,9 +95,9 @@ use lawsaw\widgets\Button;
 
 <?php
 
-$this->registerJs(setScript()['js']('index'), View::POS_END);
+//$this->registerJs(setScript()['js']('index'), View::POS_END);
 $this->registerJs(setScript()['defer'](), View::POS_END);
-$this->registerJs(setScript()['iframe'](), View::POS_END);
+//$this->registerJs(setScript()['iframe'](), View::POS_END);
 
 ?>
 

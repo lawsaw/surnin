@@ -1,0 +1,19 @@
+.header-1 {
+
+  &:before {
+
+    @include themeUnderline(9, #ffaf53, 250px);
+
+  }
+
+}
+
+.header-2 {
+
+  &:before {
+
+    @include themeUnderline(10, #ffaf53, 100px);
+
+  }
+
+}

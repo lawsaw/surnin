@@ -14,9 +14,65 @@ use common\models\LoginForm;
 use yii\web\Response;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
+use common\models\Feedback;
 
 class FormsController extends AppController
 {
+
+    public function beforeAction($action) {
+        $this->enableCsrfValidation = false; // <-- here
+        return parent::beforeAction($action);
+    }
+
+
+
+    public function actionFeedback($suka = null)
+    {
+        $request = Yii::$app->request;
+        $method = 'unknown';
+        $model = new Feedback();
+        $data = null;
+        if ($request->isAjax) { $method = 'Ajax'; }
+        if ($request->isGet)  { $method = 'Get'; $data = $request->get(); }
+        if ($request->isPost) { $method = 'Post'; $data = $request->post(); }
+        if ($request->isPut)  { $method = 'Put'; }
+        //$data['recaptcha'] = $request->post('g-recaptcha-response');
+        if ($request) {
+            if($model->load(['Feedback' => $data]) && $model->validate()) {
+                $submit = $model->sendEmail();
+                if($submit) {
+                    return json_encode([
+                        'method' => $method,
+                        'data' => $data,
+                        'test' => $suka,
+                        'param' => ['huy' => 10],
+                        'status' => 'success',
+                    ]);
+                } else {
+                    return json_encode([
+                        'status' => 'fail',
+                        'error' => 'Message was not sent',
+                        'data' => $data,
+                    ]);
+                }
+            } else {
+                return json_encode([
+                    'status' => 'fail',
+                    'errors' => ActiveForm::validate($model),
+                    'data' => $data,
+                ]);
+            }
+
+        }
+    }
+
+
+
+
+
+
+
+
 
 
     public function actionTest()

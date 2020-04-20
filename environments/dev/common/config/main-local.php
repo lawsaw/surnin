@@ -3,9 +3,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'pgsql:host=localhost;dbname=lawsaw_yii2_advanced',
+            'dsn' => 'pgsql:host=localhost;dbname=surnin',
             'username' => 'root',
-            'password' => '',
+            'password' => '1',
             'charset' => 'utf8',
         ],
         'mailer' => [

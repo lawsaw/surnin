@@ -1,0 +1,26 @@
+$fonts : (
+  (
+    'path' : map-get($defaults, 'path-fonts') + 'roboto',
+    'family' : (
+      'robotoBlack'               : 'roboto-black-webfont',
+      'robotoBold'                : 'roboto-bold-webfont',
+      'robotoMedium'              : 'roboto-medium-webfont',
+      'robotoRegular'             : 'roboto-regular-webfont',
+      'robotoLight'               : 'roboto-light-webfont',
+      'robotoThin'                : 'roboto-thin-webfont',
+      'robotoBlackItalic'         : 'roboto-blackitalic-webfont',
+      'robotoBoldItalic'          : 'roboto-bolditalic-webfont',
+      'robotoItalic'              : 'roboto-italic-webfont',
+      'robotoLightItalic'         : 'roboto-lightitalic-webfont',
+      'robotoMediumItalic'        : 'roboto-mediumitalic-webfont',
+      'robotoThinItalic'          : 'roboto-thinitalic-webfont',
+    ),
+  ),
+);
+
+@for $i from 0 to length($fonts) {
+  $path: map-get(nth($fonts, $i+1), 'path');
+  @each $name, $file in map-get(nth($fonts, $i+1), 'family') {
+    @include font-face($name, $file, $path);
+  }
+}

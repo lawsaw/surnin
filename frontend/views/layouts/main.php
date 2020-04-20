@@ -28,7 +28,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <?= FavIcon::widget([
-        'icon' => 'image.png',
+        'icon' => 'images/favicon.png',
     ]); ?>
 
     <?= Html::csrfMetaTags()  ?>
